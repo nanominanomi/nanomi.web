@@ -1,0 +1,96 @@
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --accent-color: #ff5722;
+  --header-color: #ffffff01;
+  --link-color: var(--accent-color);
+  --link-hover-color: #ff7043;
+}
+
+body.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #ff5722;
+  --header-color: #ffffff01;
+  --logo-color: var(--accent-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+body.dark {
+  --bg-color: #020202;
+  --text-color: #ffffff;
+  --accent-color: #ff5722;
+  --header-color: #00000001;
+  --logo-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type="checkbox"] {
+    display: none; /* 隱藏 checkbox */
+}
+
+body {
+    margin: 1%;
+    padding: 1%;
+    font-family: roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+header
+/* 讓 header 填滿寬度並置中內容 */
+.site-header {
+    background: var(--header-color);
+    backdrop-filter: blur(2px);
+    padding: 10px 20px;
+    position: fixed;      /* 讓 header 固定位置 */
+    top: 0;               /* 緊貼最上方 */
+    left: 0;              /* 從左邊開始 */
+    width: 100%;          /* 滿版寬度 */
+    z-index: 1000;        /*確保在最上層，不會被其他元素蓋住 */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 讓 nav 成為橫向容器 */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 讓整體內容置中 */
+  gap: 30px;
+  position: relative;
+}
+
+.nav-menu a:hover{
+    color: var(--link-hover-color);
+}
+
+/* logo 靠左，且脫離置中行為 */
+.logo {
+  position: absolute;
+  left: 0.5%;
+  /*top: 50%;
+  */
+  transform: translateY(-50%);
+}
+
+/* logo 圖片樣式 */
+.logo img {
+  height: 40px;
+  filter: invert(57%) sepia(8%) saturate(7496%) hue-rotate(224deg) brightness(101%) contrast(102%);
+}
+
+
+/* 導覽連結 */
+.nav-menu a:not(.logo) {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.link:hover {
+  color: var(--link-hover-color);
+}

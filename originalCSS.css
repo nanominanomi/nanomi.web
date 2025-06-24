@@ -1,0 +1,78 @@
+:root {
+    --bg-color: #020202;
+    --text-color: #ffffff;
+    --logo-color: #ffffff;
+    --header-color: rgba(0, 0, 0, 0.5);
+}
+body{
+    --accent-color: #C697FF;
+}
+body.light{
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --logo-color: var(--accent-color);
+    --header-color: rgba(255, 255, 255, 0.8);
+}
+body.dark{
+    --bg-color: #020202;
+    --text-color: #ffffff;
+    --logo-color: var(--accent-color);
+    --header-color: rgba(0, 0, 0, 0.5);
+}
+
+body
+{
+    background-color: var(--bg-color);
+    font-family: Roboto, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header
+/* 讓 header 填滿寬度並置中內容 */
+.site-header {
+    background: var(--header-color);
+    backdrop-filter: blur(2px);
+    padding: 10px 20px;
+    position: fixed;      /* 讓 header 固定位置 */
+    top: 0;               /* 緊貼最上方 */
+    left: 0;              /* 從左邊開始 */
+    width: 100%;          /* 滿版寬度 */
+    z-index: 1000;        /*確保在最上層，不會被其他元素蓋住 */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 讓 nav 成為橫向容器 */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 讓整體內容置中 */
+  gap: 30px;
+  position: relative;
+}
+
+/* logo 靠左，且脫離置中行為 */
+.logo {
+  position: absolute;
+  left: 0.5%;
+  /*top: 50%;
+  */
+  transform: translateY(-50%);
+}
+
+/* logo 圖片樣式 */
+.logo img {
+  height: 40px;
+}
+
+/* 導覽連結 */
+.nav-menu a:not(.logo) {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 100%;
+}
